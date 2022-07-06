@@ -1,22 +1,26 @@
 
 
 
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
 
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page 
+//empyt password array
 
-// Assignment code here
+
+
+//Have prompts to create criteria for password
 var generatePassword = function() {
   // WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
+  // THEN I select which criteria to include in the password
   window.alert("Select Your Password Criteria");
   // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
-var lengthPwPrompt = window.prompt("How many charatcers do you want in your password? (Choose a length of at least 8 characters and no more than 128 characters)");
+  var lengthPrompt = window.prompt("How many charatcers do you want in your password? (Choose a length of at least 8 characters and no more than 128 characters)");
+  if (lengthPrompt < 8 || lengthPrompt > 128) {
+    alert("Characters must be between 8-128");
+    return generatePassword();
+}
+
 
 // WHEN asked for character types to include in the password
 // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
@@ -28,15 +32,11 @@ console.log ("specialCharactersConfirm");
 
 // WHEN all prompts are answered
 // THEN a password is generated that matches the selected criteria
+
 }
 
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
-//Have prompts to create criteria for passowrd
 
 // Write password to the #password input
 function writePassword() {
